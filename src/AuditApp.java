@@ -67,10 +67,13 @@ public class AuditApp {
 	        System.out.println();
 	        System.out.println("=== Audit Summary ===");
 	        System.out.println("Transactions: " + transactions.size());
-	        System.out.println("Total Amount: $" + total);
-	        System.out.println("Largest Transaction: $" + max);
-	        System.out.println("Average Transaction: $" + ave);
+	        System.out.printf("Total Amount: $%.2f%n", total);
+	        System.out.printf("Largest Transaction: $%.2f%n", max);
+	        System.out.printf("Average Transaction: $%.2f%n", ave);
 	        System.out.println("Above $5000 Transaction: "+ count);
+	        // V0.2
+	        System.out.println();
+	        DuplicateDetector.detect(transactions);
 	  }
 
 }
