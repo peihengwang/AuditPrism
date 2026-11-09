@@ -20,7 +20,16 @@ public class AuditApp {
 	        while (input.hasNextLine()) {
 
 	            String line = input.nextLine();
+	            // Skip empty lines
+	            if (line.trim().isEmpty()) {
+	                continue;
+	            }
 	            String[] fields = line.split(",");
+	            // Skip incomplete records
+	            if (fields.length != 5) {
+	                System.out.println("Skipping invalid record: " + line);
+	                continue;
+	            }
 
 	            String id = fields[0];
 	            String vendor = fields[1];
