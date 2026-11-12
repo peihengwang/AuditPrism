@@ -6,6 +6,8 @@ public class Transaction {
     private double amount;
     private String date;
     private String invoiceNumber;
+    // v0.3: Audit risk score
+    private int riskScore;
 
     public Transaction(String id, String vendor, double amount, String date, String invoiceNumber) {
 
@@ -14,7 +16,8 @@ public class Transaction {
         this.amount = amount;
         this.date = date;
         this.invoiceNumber = invoiceNumber;
-    }
+        this.riskScore = 0;    
+        }
 
     public String getId() {
         return id;
@@ -35,7 +38,17 @@ public class Transaction {
     public String getInvoiceNumber() {
         return invoiceNumber;
     }
-
+    
+    // v0.3: Read risk score
+    public int getRiskScore() {
+        return riskScore;
+    }
+    
+    // v0.3: Update risk score
+    public void setRiskScore(int riskScore) {
+        this.riskScore = riskScore;
+    }
+    
     public String toString() {
         return id + " | " + vendor + " | $" + amount + " | " + date + " | " + invoiceNumber;
     }
